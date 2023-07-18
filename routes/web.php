@@ -15,4 +15,43 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name("home");
+
+
+Route::get('/', function () {
+
+
+    $navbar = [
+
+        "listnavbar" => [
+
+            [
+                "name" => "Home",
+                "link" => "#",
+                "selected" => true
+            ],
+            [
+                "name" => "Shop",
+                "link" => "#",
+                "selected" => true
+            ],
+            [
+                "name" => "Contacts",
+                "link" => "#",
+                "selected" => true
+            ],
+            [
+                "name" => "About us",
+                "link" => "#",
+                "selected" => true
+            ],
+        ]
+        
+    ];
+
+
+
+
+    return view('header',$navbar);
+
+})->name('header');
