@@ -21,8 +21,12 @@
             font-family:"helvetica";
         }
         header{
-            background-color: blue;
+            background-color: #ff2d20;
             padding:1rem 0;
+        }
+        a{
+            text-decoration:none;
+            color:white;
         }
     </style>
     <header>
@@ -30,7 +34,9 @@
             <ul class='row text-center'>
                     @foreach($listnavbar as $element)
                     <li class="col-3 mt-2">
-                    {{$element['name']}}
+                        <a href="{{ $element['link'] }}">
+                            {{$element['name']}}
+                        </a>
                     </li>
                     @endforeach
             </ul>

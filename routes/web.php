@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name("home");
 
 
 Route::get('/', function () {
@@ -27,7 +24,7 @@ Route::get('/', function () {
 
             [
                 "name" => "Home",
-                "link" => "#",
+                "link" => ('home'),
                 "selected" => true
             ],
             [
@@ -55,3 +52,47 @@ Route::get('/', function () {
     return view('header',$navbar);
 
 })->name('header');
+
+
+Route::get('/home', function () {
+
+
+    $listhome = [
+
+        "listhome" => [
+
+            [
+                "name" => "Forge",
+                "link" => "#",
+                "selected" => true
+            ],
+            [
+                "name" => "Vapor",
+                "link" => "#",
+                "selected" => true
+            ],
+            [
+                "name" => "Ecosystem",
+                "link" => "#",
+                "selected" => true
+            ],
+            [
+                "name" => "News",
+                "link" => "#",
+                "selected" => true
+            ],
+            [
+                "name" => "Partnes",
+                "link" => "#",
+                "selected" => true
+            ],
+        ]
+        
+    ];
+
+
+
+
+    return view('home',$listhome);
+
+})->name('home');
